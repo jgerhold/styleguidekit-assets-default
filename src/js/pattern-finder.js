@@ -40,8 +40,8 @@ var patternFinder = {
 		$('#sg-find .typeahead').typeahead({ highlight: true }, {
 			displayKey: 'patternPartial',
 			source: patterns.ttAdapter()
-		});
-		//.on('typeahead:selected', patternFinder.onAutocompleted).on('typeahead:autocompleted', patternFinder.onSelected);
+		})
+		.on('typeahead:selected', patternFinder.onAutocompleted).on('typeahead:autocompleted', patternFinder.onSelected);
 		
 	},
 	

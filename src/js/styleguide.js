@@ -610,7 +610,7 @@
 				}
 			} else if (data.keyPress == 'ctrl+shift+0') {
 				sizeiframe(320,true);
-			} else if (found = data.keyPress.match(/ctrl\+shift\+([1-9])/)) {
+			} else if (found == data.keyPress.match(/ctrl\+shift\+([1-9])/)) {
 				var val = mqs[(found[1]-1)];
 				var type = (val.indexOf("px") !== -1) ? "px" : "em";
 				val = val.replace(type,"");
