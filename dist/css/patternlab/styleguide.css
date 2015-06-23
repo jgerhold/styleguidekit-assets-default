@@ -215,7 +215,7 @@
 .sg-acc-panel {
   overflow: hidden;
   max-height: 0;
-  min-width: 10em;
+  min-width: 16em;
   -webkit-transition: max-height 0.1s ease-out;
   transition: max-height 0.1s ease-out;
 }
