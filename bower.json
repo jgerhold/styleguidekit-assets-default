@@ -28,7 +28,7 @@
       "main": "jwerty.js"
     },
     "prism": {
-      "main": "prism.js"
+      "main": [ "prism.js", "components/prism-twig.js" ]
     }
   },
   "devDependencies": {}

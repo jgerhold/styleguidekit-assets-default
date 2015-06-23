@@ -137,7 +137,8 @@ var codeViewer = {
 		
 		codeViewer.clearSelection();
 		var fill      = "";
-		var className = (type == "c") ? "css" : "markup";
+		// var className = (type == "c") ? "css" : "markup";
+		var className = (type == "c") ? "css" : "twig";
 		$("#sg-code-fill").removeClass().addClass("language-"+className);
 		if (type == "m") {
 			fill = codeViewer.mustache;
@@ -225,7 +226,8 @@ var codeViewer = {
 	*/
 	activateDefaultTab: function(type,code) {
 		var typeName  = "";
-		var className = (type == "c") ? "css" : "markup";
+		// var className = (type == "c") ? "css" : "markup";
+		var className = (type == "c") ? "css" : "twig";
 		if (type == "m") {
 			typeName = "mustache";
 		} else if (type == "e") {
@@ -277,7 +279,7 @@ var codeViewer = {
 		$('#sg-code-lineage-fill a, #sg-code-lineager-fill a').on("click", function(e){
 			e.preventDefault();
 			$("#sg-code-loader").css("display","block");
-			var obj = JSON.stringify({ "event": "patternLab.pathUpdate", "path": urlHandler.getFileName($(this).attr("data-patternpartial")) });
+			var obj = JSON.stringify({ "event": "patternLab.updatePath", "path": urlHandler.getFileName($(this).attr("data-patternpartial")) });
 			document.getElementById("sg-viewport").contentWindow.postMessage(obj,codeViewer.targetOrigin);
 		});
 		
