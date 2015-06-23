@@ -289,7 +289,7 @@ $animate-quick: 0.2s;
 .sg-acc-panel {
 	overflow: hidden;
 	max-height: 0;
-	min-width: 10em;
+	min-width: 16em;
 	@include sg-transition(max-height,0.1s,ease-out);
 
 	li {
