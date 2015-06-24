@@ -502,6 +502,14 @@
 	var patternName = "all";
 	var patternPath = "";
 	var iFramePath  = window.location.protocol+"//"+window.location.host+window.location.pathname.replace("index.html","")+"styleguide/html/styleguide.html?"+Date.now();
+
+	//get pages-index if it exists instead of "all"
+	if (urlHandler.getFileName('pages-index')) {
+		patternName = "pages-index";
+		patternPath = urlHandler.getFileName(patternName);
+		iFramePath  = (patternPath !== "") ? window.location.protocol+"//"+window.location.host+window.location.pathname.replace("index.html","")+patternPath+"?"+Date.now() : iFramePath;
+	}
+
 	if ((oGetVars.p !== undefined) || (oGetVars.pattern !== undefined)) {
 		patternName = (oGetVars.p !== undefined) ? oGetVars.p : oGetVars.pattern;
 		patternPath = urlHandler.getFileName(patternName);
