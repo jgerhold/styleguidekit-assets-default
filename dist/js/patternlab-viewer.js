@@ -1804,8 +1804,8 @@ window.addEventListener("message", receiveIframeMessage, false);
 	var iFramePath  = window.location.protocol+"//"+window.location.host+window.location.pathname.replace("index.html","")+"styleguide/html/styleguide.html?"+Date.now();
 
 	//get pages-index if it exists instead of "all"
-	if (urlHandler.getFileName('pages-index')) {
-		patternName = "pages-index";
+	if (config.hasOwnProperty('plHome') && config.plHome !=="" && urlHandler.getFileName(config.plHome)) {
+		patternName = config.plHome;
 		patternPath = urlHandler.getFileName(patternName);
 		iFramePath  = (patternPath !== "") ? window.location.protocol+"//"+window.location.host+window.location.pathname.replace("index.html","")+patternPath+"?"+Date.now() : iFramePath;
 	}
